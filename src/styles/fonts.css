@@ -1,0 +1,49 @@
+/* src/styles/fonts.css */
+@font-face {
+    font-family: 'Nasalization';
+    src: url('/fonts/nasalization-rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofachrome';
+    src: url('/fonts/sofachrome rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Sofachrome Italic';
+    src: url('/fonts/sofachrome rg it.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Gladifilthefte';
+    src: url('/fonts/Gladifilthefte.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GoodTimesRg';
+    src: url('/fonts/good times rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Hardman';
+    src: url('/fonts/Hardman.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Remarcle';
+    src: url('/fonts/Remarcle.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
