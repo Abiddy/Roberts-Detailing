@@ -23,7 +23,7 @@ const FeaturedServices = () => {
   return (
     <div style={{ padding: '40px 5px', backgroundColor: '#f8f8f8' }}>
       <h2 style={{ fontFamily: 'Cabin, sans-serif', fontSize: '2rem', textAlign: 'center', marginBottom: '30px',  color: '#333' }}>
-        Special Services
+        Featured Services
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
         {services.map((service, index) => (

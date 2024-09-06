@@ -36,7 +36,7 @@ const FAQ = () => {
           <AccordionItem value="item-1">
             <AccordionTrigger>What is paint correction, and how does it help?</AccordionTrigger>
             <AccordionContent>
-              Paint correction is a process of removing imperfections from a vehicle's paint, such as swirls, scratches, and oxidation, by polishing. It helps restore the shine and clarity of your car's paint, making it look like new again.
+              Paint correction is a process of removing imperfections from a vehicles paint, such as swirls, scratches, and oxidation, by polishing. It helps restore the shine and clarity of your cars paint, making it look like new again.
             </AccordionContent>
           </AccordionItem>
 
@@ -44,7 +44,7 @@ const FAQ = () => {
           <AccordionItem value="item-2">
             <AccordionTrigger>What is the difference between ceramic coating and waxing?</AccordionTrigger>
             <AccordionContent>
-              Ceramic coating provides long-lasting protection for your vehicle's paint, lasting up to several years, whereas waxing offers temporary protection (typically 1-3 months). Ceramic coatings also provide better resistance to dirt, water, and UV rays.
+              Ceramic coating provides long-lasting protection for your vehicles paint, lasting up to several years, whereas waxing offers temporary protection (typically 1-3 months). Ceramic coatings also provide better resistance to dirt, water, and UV rays.
             </AccordionContent>
           </AccordionItem>
 
@@ -68,7 +68,7 @@ const FAQ = () => {
           <AccordionItem value="item-5">
             <AccordionTrigger>What is included in a full detail package?</AccordionTrigger>
             <AccordionContent>
-              Our full detail package includes vacuuming the interior, cleaning and conditioning leather seats, shampooing carpets, cleaning door jambs, polishing and waxing the exterior, and more. It's a comprehensive cleaning inside and out.
+              Our full detail package includes vacuuming the interior, cleaning and conditioning leather seats, shampooing carpets, cleaning door jambs, polishing and waxing the exterior, and more. Its a comprehensive cleaning inside and out.
             </AccordionContent>
           </AccordionItem>
 
