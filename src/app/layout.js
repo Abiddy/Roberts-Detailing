@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="favicon.ico" />
         <title>{metadata.title}</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
