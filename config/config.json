@@ -1,0 +1,12 @@
+{
+  "site": {
+    "title": "Roberts Detailing",
+    "base_url": "/",
+    "favicon": "public/logor.png",
+    "logo": "public/logor.png",
+    "logo_width": "120",
+    "logo_height": "48"
+  }
+
+ 
+}
