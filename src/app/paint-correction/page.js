@@ -5,6 +5,7 @@ import bannerImage from '/public/paint2.jpg'; // Replace with your actual banner
 import Contact from '@/components/Contact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
 import { faCheck, faXmark, faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons'; // Import the necessary icons
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const PaintCorrection = () => {
   const [selectedStage, setSelectedStage] = useState(0);
@@ -88,6 +89,17 @@ const PaintCorrection = () => {
         />
         <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Paint Correction Services</h1>
       </div>
+
+              {/* <Tabs defaultValue="account" className="w-[400px]">
+          <TabsList>
+            <TabsTrigger value="1">Stage 1</TabsTrigger>
+            <TabsTrigger value="2">Stage 2</TabsTrigger>
+            <TabsTrigger value="3">Stage 3</TabsTrigger>
+          </TabsList>
+          <TabsContent value="1">Make changes to your account here.</TabsContent>
+          <TabsContent value="2">Change your password here.</TabsContent>
+          <TabsContent value="3">Change your password here.</TabsContent>
+        </Tabs> */}
 
       {/* Menu Bar */}
       <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>

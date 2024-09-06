@@ -1,74 +1,61 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
 const FeaturedServices = () => {
   const services = [
     {
       title: 'Paint Correction',
       image: '/paint.jpg', // Replace with your image path
-      link: '/paint-correction' // Placeholder URL
+      link: '/paint-correction', // Placeholder URL
+      description: 'Restore your cars paint to its original brilliance by eliminating swirl marks, scratches, and oxidation.'
     },
     {
       title: 'Ceramic Coating',
       image: '/ceramic.jpg', // Replace with your image path
-      link: '/ceramic-coating' // Placeholder URL
+      link: '/ceramic-coating', // Placeholder URL
+      description: 'Protect vehicles exterior from environmental contaminants, UV rays, a glossy finish that makes maintenance a breeze.'
     },
     {
       title: 'Interior Detailing',
       image: '/interior.jpg', // Replace with your image path
-      link: '/full-detailing' // Placeholder URL
+      link: '/full-detailing', // Placeholder URL
+      description: 'From deep cleaning and conditioning of seats and carpets to sanitizing surfaces, we ensure every inch of your cars interior feels fresh, clean, and luxurious.'
     },
   ];
 
   return (
-    <div style={{ padding: '40px 5px', backgroundColor: '#f8f8f8' }}>
-      <h2 style={{ fontFamily: 'Cabin, sans-serif', fontSize: '2rem', textAlign: 'center', marginBottom: '30px',  color: '#333' }}>
+    <div style={{ padding: '40px 5px', backgroundColor: 'white' }}>
+      <h2 style={{ fontFamily: 'Cabin, sans-serif', fontSize: '2rem', textAlign: 'center', marginBottom: '60px', color: 'black' , marginTop:'60px'}}>
         Featured Services
       </h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
         {services.map((service, index) => (
-          <div 
-            key={index} 
-            style={{
-              position: 'relative', 
-              borderRadius: '30px', 
-              overflow: 'hidden', 
-              cursor: 'pointer', 
-              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-              transition: 'transform 0.3s ease',
-            }}
-            onClick={() => window.location.href = service.link}
-            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            <img 
+    <Card className="w-[350px]" key={index}>
+    <CardHeader>
+      <CardTitle>{service.title}</CardTitle>
+      <CardDescription>{service.description}</CardDescription>
+    </CardHeader>
+    <CardContent>
+            <Image 
               src={service.image} 
               alt={service.title} 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              width={300} 
+              height={180} // Landscape size
+              style={{ borderRadius: '20px 20px 20px 20px', objectFit: 'cover' }} 
             />
-            <div 
-              style={{
-                position: 'absolute', 
-                bottom: '20px', 
-                left: '20px', 
-                color: 'white', 
-                fontFamily: 'Cabin, sans-serif', 
-                fontSize: '1.5rem',
-              }}
-            >
-              {service.title}
-            </div>
-            <div 
-              style={{
-                position: 'absolute', 
-                bottom: '20px', 
-                right: '20px', 
-                color: 'white'
-              }}
-            >
-              <ChevronRight size={32} />
-            </div>
-          </div>
+             
+            </CardContent>
+            
+            <CardFooter className="flex justify-between">
+            <Link href={service.link}>
+            <Button variant="outline">Learn More</Button>
+                </Link>
+                </CardFooter>
+          </Card>
         ))}
       </div>
     </div>

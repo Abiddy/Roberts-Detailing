@@ -49,7 +49,7 @@ export default function Contact() {
         <h2 style={{
           fontFamily: 'Montserrat, sans-serif',
           fontSize: '1.8rem',
-          marginBottom: '20px',
+          marginBottom: '40px',
           textAlign: 'center',
         }}>Get Quote</h2>
 
