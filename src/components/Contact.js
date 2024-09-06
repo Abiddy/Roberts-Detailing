@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Contact() {
   const form = useRef();
@@ -28,30 +28,36 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ 
-      position: 'relative', 
-      backgroundColor: 'black', 
-      borderRadius: '8px', 
-      overflow: 'hidden', 
-      color: 'white' 
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      // backgroundColor: '#f8f8f8', // White background
+      padding: '5px',
     }}>
       {/* Contact Form */}
-      <div style={{ 
-        position: 'relative', 
-        zIndex: '3', 
-        maxWidth: '600px', 
-        margin: '0 auto', 
-        padding: '20px', 
-        backgroundColor: '#000', 
-        borderRadius: '8px', 
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)' 
+      <div style={{
+        maxWidth: '600px', // Max width to center and contain the form
+        width: '100%',
+        padding: '30px',
+        backgroundColor: 'white', // Form card
+        borderRadius: '30px',
+        // boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+        color: 'black', // Text inside form
       }}>
-        <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1.5rem', marginBottom: '20px' }}>Ask A Question</h2>
+        <h2 style={{
+          fontFamily: 'Montserrat, sans-serif',
+          fontSize: '1.8rem',
+          marginBottom: '20px',
+          textAlign: 'center',
+        }}>Get Quote</h2>
+
         <form ref={form} onSubmit={sendEmail}>
           {/* Name Fields */}
           <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ width: '48%' }}>
-              <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>First Name</label>
+              <label style={labelStyle}>First Name</label>
               <input
                 type="text"
                 name="user_name"
@@ -61,7 +67,7 @@ export default function Contact() {
               />
             </div>
             <div style={{ width: '48%' }}>
-              <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Last Name</label>
+              <label style={labelStyle}>Last Name</label>
               <input
                 type="text"
                 name="user_lastname"
@@ -74,7 +80,7 @@ export default function Contact() {
 
           {/* Email and Phone Fields */}
           <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Email</label>
+            <label style={labelStyle}>Email</label>
             <input
               type="email"
               name="user_email"
@@ -84,7 +90,7 @@ export default function Contact() {
             />
           </div>
           <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Phone</label>
+            <label style={labelStyle}>Phone</label>
             <input
               type="tel"
               name="user_phone"
@@ -96,7 +102,7 @@ export default function Contact() {
 
           {/* Vehicle Information Fields */}
           <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Vehicle Year, Make and Model</label>
+            <label style={labelStyle}>Vehicle Year, Make and Model</label>
             <input
               type="text"
               name="vehicle_info"
@@ -106,7 +112,7 @@ export default function Contact() {
             />
           </div>
           <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Vehicle Paint Color</label>
+            <label style={labelStyle}>Vehicle Paint Color</label>
             <input
               type="text"
               name="vehicle_color"
@@ -117,7 +123,7 @@ export default function Contact() {
 
           {/* Message Field */}
           <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '1rem', marginBottom: '4px' }}>Message</label>
+            <label style={labelStyle}>Message</label>
             <textarea
               name="message"
               placeholder="Message"
@@ -133,28 +139,14 @@ export default function Contact() {
           {/* Services Requested Checkboxes */}
           <div style={{ marginBottom: '24px' }}>
             <label style={{ display: 'block', fontSize: '1.25rem', marginBottom: '8px' }}>Services Requested</label>
-            <p style={{ fontSize: '0.9rem', color: '#ccc', marginBottom: '12px' }}>Please select services you are interested in.</p>
+            <p style={{ fontSize: '0.9rem', color: '#ccc', marginBottom: '12px' }}>Please select services you are interested in</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label>
-                <input type="checkbox" name="service" value="Paint Correction" style={{ marginRight: '8px' }} />
-                Paint Correction
-              </label>
-              <label>
-                <input type="checkbox" name="service" value="Ceramic Coatings" style={{ marginRight: '8px' }} />
-                Ceramic Coatings
-              </label>
-              <label>
-                <input type="checkbox" name="service" value="Interior Exterior" style={{ marginRight: '8px' }} />
-                Interior Exterior
-              </label>
-              <label>
-                <input type="checkbox" name="service" value="Mobile Services" style={{ marginRight: '8px' }} />
-                Mobile Services
-              </label>
-              <label>
-                <input type="checkbox" name="service" value="Vendor Services" style={{ marginRight: '8px' }} />
-                Vendor Services
-              </label>
+              {['Paint Correction', 'Ceramic Coatings', 'Full Detailing'].map((service, index) => (
+                <label key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <Checkbox name="service" value={service} /> {/* Use shadcn Checkbox here */}
+                  {service}
+                </label>
+              ))}
             </div>
           </div>
 
@@ -183,12 +175,12 @@ export default function Contact() {
   );
 }
 
-// Shared Input Style
+// Shared Input and Label Styles
 const inputStyle = {
   width: '100%',
   padding: '8px 12px',
   borderRadius: '6px',
-  border: '1px solid #ccc',
+  // border: '1px solid #ccc',
   fontSize: '1rem',
   color: '#333',
   backgroundColor: '#f9f9f9',
@@ -196,4 +188,9 @@ const inputStyle = {
   transition: 'border-color 0.3s',
   marginBottom: '8px',
 };
- 
+
+const labelStyle = {
+  display: 'block',
+  fontSize: '1rem',
+  marginBottom: '4px',
+};
